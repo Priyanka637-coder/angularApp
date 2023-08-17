@@ -1,46 +1,67 @@
-<div class="container">
-  <h1>Job Monitor</h1>
-  <div class="Search">
-    <input type="input"/>&nbsp;
-    <button>Search</button>
-  </div><br/>
-  <table class="task-table">
-    <thead>
-      <tr>
-        <th>Job Name</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Task 1</td>
-        <td>Completed</td>
-      </tr>
-      <tr>
-        <td>Task 2</td>
-        <td>Failed</td>
-        <td><button type="submit">Reprocess</button></td>
-      </tr>
-      <tr>
-        <td>Task 3</td>
-        <td>Completed</td>
-      </tr>
-      <tr>
-        <td>Task 4</td>
-        <td>Completed</td>
-      </tr>
-      <tr>
-        <td>Task 5</td>
-        <td>Completed</td>
-      </tr>
-      <tr>
-        <td>Task 6</td>
-        <td>Failed</td>
-        <td><button type="submit">Reprocess</button></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="hero">
+  <div class="bubbles">
+    <img src="assets/images/bubble.png" alt="Bubble">
+    <img src="assets/images/bubble.png" alt="Bubble">
+    <img src="assets/images/bubble.png" alt="Bubble">
+    <img src="assets/images/bubble.png" alt="Bubble">
+    <img src="assets/images/bubble.png" alt="Bubble">
+    <img src="assets/images/bubble.png" alt="Bubble">
+    <img src="assets/images/bubble.png" alt="Bubble">
+  </div>
+  <div class="container">
+    <h1>JOB MONITOR</h1>
+    <div class="innerContainer">
+      <form class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button><i class='bx bx-search'></i></button>
+      </form><br />
+      <div class="actionList">
+        <button type="submit">CREATE</button>
+        <button type="submit">DELETE ALL</button>
+      </div>
+      <table class="task-table">
+        <thead>
+          <tr>
+            <th>Job Name</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Task 1</td>
+            <td>Completed</td>
+            <td><button type="submit">Delete</button></td>
+          </tr>
+          <tr>
+            <td>Task 2</td>
+            <td>Failed</td>
+            <td><button type="submit">Delete</button><button type="submit" class="reProcess">Reprocess</button></td>
+          </tr>
+          <tr>
+            <td>Task 3</td>
+            <td>Completed</td>
+            <td><button type="submit">Delete</button></td>
+          </tr>
+          <tr>
+            <td>Task 4</td>
+            <td>Completed</td>
+            <td><button type="submit">Delete</button></td>
+          </tr>
+          <tr>
+            <td>Task 5</td>
+            <td>Completed</td>
+            <td><button type="submit">Delete</button></td>
+          </tr>
+          <tr>
+            <td>Task 6</td>
+            <td>Failed</td>
+            <td><button type="submit">Delete</button><button type="submit" class="reProcess">Reprocess</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
