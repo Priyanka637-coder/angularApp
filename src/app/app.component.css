@@ -21,6 +21,7 @@
     flex-direction: column;
     margin: 50px;
     padding: 20px;
+    overflow: visible;
 }
 .innerContainer {
     display: flex;
@@ -77,6 +78,7 @@
 .search-bar button i{
     font-size: 22px;
 }
+
 button{
     padding: 10px 25px;
     width: 100%;
@@ -89,10 +91,12 @@ button{
     outline: none;
     box-shadow: rgba(0,0,0,0.4);
 }
+/*
 button:hover{
     background-color:  #fff;
     color: turquoise;
 }
+*/
 .reProcess{
     margin-top: 2px;
 }
@@ -173,4 +177,19 @@ button:hover{
     border: 1px solid #fff;
     background: transparent;
     color: #fff;
+}
+
+.actionButtons{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.actionButtons button {
+    border: none;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    font-size: 1.3em;
+    margin-left: 5px;
 }

@@ -19,10 +19,10 @@ export class JobService {
   constructor(private http: HttpClient) {
 
     this.addJobURL = 'http://localhost:8080/create';
-    this.getJobURL = 'http://localhost:9100/get/all';
-    this.updateJobUrl = 'http://localhost:9100/asset/update';
-    this.deleteJobUrl = 'http://localhost:9100/asset/delete';
-    this.getJobByUrl = 'http://localhost:9100/asset/get';
+    this.getJobURL = 'http://localhost:8080/get/all';
+    this.updateJobUrl = 'http://localhost:8080/asset/update';
+    this.deleteJobUrl = 'http://localhost:8080/asset/delete';
+    this.getJobByUrl = 'http://localhost:8080/asset/get';
   }
 
   addJob(job: Job): Observable<Job> {

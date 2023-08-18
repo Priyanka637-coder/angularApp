@@ -12,63 +12,95 @@
     <h1>JOB MONITOR</h1>
     <div class="innerContainer">
       <form class="search-bar">
-        <input type="text" placeholder="Search...">
+        <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterJobs()" placeholder="Search...">
         <button><i class='bx bx-search'></i></button>
       </form><br />
       <div class="actionList">
-        <button type="submit">CREATE</button>
-        <button type="submit">DELETE ALL</button>
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#addJob" type="submit">CREATE</button>
+        <button type="submit" (click)="exportToCSV()">EXPORT</button>
       </div>
       <table class="task-table">
         <thead>
           <tr>
             <th>Job Name</th>
+            <th>Job Description</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
+
+          <tr *ngFor="let Job of filteredJobList">
+            <td>{{Job.id}}</td>
+            <td>{{Job.jobName}}</td>
+            <td>{{Job.jobDescription}}</td>
+            <td>{{ Job.status ? 'Completed' : 'Failed' }}</td>
+            <td class="actionButtons">
+              <button title="Update"><i class='bx bx-edit-alt'></i></button>
+              <button title="Delete" (click)="deleteJob(Job)"><i class='bx bx-trash'></i></button>
+              <button ng-if="!Job.status" title="Reprocess" (click)="reprocessJob(Job)"><i
+                  class='bx bx-revision'></i></button>
+            </td>
+          </tr>
           <tr>
             <td>Task 1</td>
-            <td>Completed</td>
-            <td><button type="submit">Delete</button></td>
+            <td>Task 1</td>
+            <td><span>Completed</span></td>
+            <td class="actionButtons">
+              <button title="Update"><i class='bx bx-edit-alt'></i></button>
+              <button title="Delete"><i class='bx bx-trash'></i></button>
+            </td>
           </tr>
           <tr>
             <td>Task 2</td>
+            <td>Task 2</td>
             <td>Failed</td>
-            <td><button type="submit">Delete</button><button type="submit" class="reProcess">Reprocess</button></td>
+            <td class="actionButtons">
+              <button title="Update"><i class='bx bx-edit-alt'></i></button>
+              <button title="Delete"><i class='bx bx-trash'></i></button>
+              <button title="Reprocess"><i class='bx bx-revision'></i></button>
+            </td>
           </tr>
           <tr>
             <td>Task 3</td>
+            <td>Task 3</td>
             <td>Completed</td>
-            <td><button type="submit">Delete</button></td>
+            <td class="actionButtons">
+              <button title="Update"><i class='bx bx-edit-alt'></i></button>
+              <button title="Delete"><i class='bx bx-trash'></i></button>
+            </td>
           </tr>
           <tr>
             <td>Task 4</td>
+            <td>Task 4</td>
             <td>Completed</td>
-            <td><button type="submit">Delete</button></td>
+            <td class="actionButtons">
+              <button title="Update"><i class='bx bx-edit-alt'></i></button>
+              <button title="Delete"><i class='bx bx-trash'></i></button>
+            </td>
           </tr>
           <tr>
             <td>Task 5</td>
+            <td>Task 5</td>
             <td>Completed</td>
-            <td><button type="submit">Delete</button></td>
+            <td class="actionButtons">
+              <button title="Update"><i class='bx bx-edit-alt'></i></button>
+              <button title="Delete"><i class='bx bx-trash'></i></button>
+            </td>
           </tr>
           <tr>
             <td>Task 6</td>
+            <td>Task 6</td>
             <td>Failed</td>
-            <td><button type="submit">Delete</button><button type="submit" class="reProcess">Reprocess</button></td>
+            <td class="actionButtons">
+              <button title="Update"><i class='bx bx-edit-alt'></i></button>
+              <button title="Delete"><i class='bx bx-trash'></i></button>
+              <button title="Reprocess"><i class='bx bx-revision'></i></button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <router-outlet></router-outlet>
